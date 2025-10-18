@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consonance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="check_profile.js"></script>
+    <script src="survey_script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="back">
+            <a href="/presurvey">
+                &larr; Retour au pré-sondage
+            </a>
+        </div>
+
+        <h2>Sondage</h2>
+
+        <p class="question">Écoutez les deux sons :</p>
+        <div class="button-group">
+            <button id="playSound1" onclick="playSound(1)">Jouer le son 1</button>
+            <button id="playSound2" onclick="playSound(2)">Jouer le son 2</button>
+        </div>
+
+        <form id="form">
+            <p class="question">Quel son est le plus consonant (sonne le mieux) ?</p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="consonant" value="1" required>
+                    Son 1
+                </label>
+                <label>
+                    <input type="radio" name="consonant" value="2">
+                    Son 2
+                </label>
+                <label>
+                    <input type="radio" name="consonant" value="0">
+                    Les deux sont également consonants / Ne sait pas
+                </label>
+            </div>
+            <br>
+            <button type="button" class="submit-btn" onclick="sendSurveyResponse()">Soumettre</button>
+        </form>
+    </div>
+</body>
+
+</html>

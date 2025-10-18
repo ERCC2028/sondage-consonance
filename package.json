@@ -1,0 +1,19 @@
+{
+    "name": "musicsurvey",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^5.1.0",
+        "pg": "^8.16.3",
+        "sequelize": "^6.37.7",
+        "sqlite3": "^5.1.7"
+    }
+}

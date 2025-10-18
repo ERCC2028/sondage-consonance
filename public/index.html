@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consonance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+
+<body>
+    <div class="container home">
+        <h1>Sondage consonance</h1>
+        <p>
+            Ce sondage vise à mieux comprendre la perception de la consonance musicale de sons composés de seulement deux ondes sinusoïdales. On dit qu'un extrait sonore est «&nbsp;consonant&nbsp;» si il «&nbsp;sonne bien&nbsp;», s'il produit une sensation d'harmonie, de stabilité, d'agréable équilibre à l'oreille. <br><br>
+            Vous serez d'abord invité(e) à répondre à un ensemble de questions pour connaître votre profil auditif et musical et les conditions dans lesquelles vous avez répondu à ce sondage. Vous devrez ensuite écouter plusieurs paires d'extraits sonores et indiquer lequel des deux extraits vous semble le plus consonant. . <br><br>
+            Vous pouvez revenir à tout moment au pré-sondage pour modifier les informations relatives aux conditions d'écoute et toutes vos réponses à ce pré-sondage sont enregistrées même si vous fermez l'onglet. N’hésitez donc pas à revenir plusieurs fois sur le sondage pour comparer un maximum d’extraits sonores. <br><br>
+            Pour chaque extrait, veuillez écouter attentivement les deux sons puis sélectionner la réponse qui correspond le mieux à votre ressenti. Il n'y a pas de bonne ou de mauvaise réponse&nbsp;: nous nous intéressons à votre opinion personnelle. <br><br>
+            Vous pouvez répondre au sondage avec n'importe quel système audio (casque, écouteurs, enceintes...) mais nous vous recommandons vivement d'utiliser un casque ou des écouteurs. <br><br>
+            Aucune donnée personnelle n'est collectée, et les réponses sont entièrement anonymisées et utilisées à des fins de recherche uniquement. Les résultats pourront être utilisés dans le cadre d’une recherche personnelle et éventuellement publiés sous forme d’article ou de résumé scientifique. En participant, vous acceptez que vos réponses anonymisées soient utilisées à cette fin. <br><br>
+            La participation est libre et volontaire et vous pouvez interrompre votre participation à tout moment en fermant simplement l'onglet de votre navigateur. Cependant, vos réponses seront définitivement enregistrées à chaque fois que vous appuyerez sur le bouton «&nbsp;Soumettre&nbsp;».
+        </p>
+        <br>
+        <div class="consent-checkbox">
+            <label for="consent">
+                <input type="checkbox" id="consent" name="consent" required onchange="document.querySelector('.submit-btn').disabled = !this.checked;">
+                J'accepte de participer à ce sondage et que mes données anonymisées soient utilisées à des fins de recherche.
+            </label>
+        </div>
+        <br>
+        <button type="button" class="submit-btn" onclick="window.location='/presurvey'" disabled>Commencer le sondage</button>
+    </div>
+</body>
+
+</html>

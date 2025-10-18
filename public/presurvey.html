@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consonance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="presurvey_script.js"></script>
+</head>
+
+<body onload="onLoad()">
+    <div class="container">
+        <div class="back">
+            <a href="/">
+                &larr; Retour à l'accueil
+            </a>
+        </div>
+
+        <h2>Pré-sondage</h2>
+
+        <form id="form">
+            <p class="question">Écoutez le son 0 et réglez votre volume à un niveau confortable&nbsp;:</p>
+            <div class="button-group">
+                <button type="button" id="play-calibration-sound" onclick="playCalibrationSound()">Jouer le son 0</button>
+            </div>
+
+            <p class="question"><b>À chaque fois que vous changez de conditions d'écoute (système audio, environnement, etc.), réécoutez le son 0 et réctifiez si besoin vos réponses dans la section «&nbsp;Conditions d'écoute&nbsp;». </b></p>
+
+            <h3>Conditions d'écoute</h3>
+
+            <p class="question"><b>1.</b> En écoutant le son 0, avez-vous entendu des pulsations régulières
+                (volume qui monte et descend régulièrement environ une fois par seconde) ou un son stable (ton continu,
+                sans variation nette de volume)&nbsp;? </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="stereo" value="0">
+                    Pulsations régulières
+                </label>
+                <label>
+                    <input type="radio" name="stereo" value="1">
+                    Son stable
+                </label>
+            </div>
+
+            <p class="question"><b>2.</b> Utilisez-vous actuellement un casque ou des écouteurs&nbsp;? </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="headphones" value="0">
+                    Oui (Recommandé)
+                </label>
+                <label>
+                    <input type="radio" name="headphones" value="1">
+                    Non (Non recommandé)
+                </label>
+            </div>
+
+            <p class="question"><b>3.</b> Des effets audio sont-ils activés (EQ, spatial/audio enhancements,
+                noise-cancelling transparency, Dolby Atmos, etc.)&nbsp;? </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="audioEffects" value="0">
+                    Oui (Non recommandé)
+                </label>
+                <label>
+                    <input type="radio" name="audioEffects" value="1">
+                    Non (Recommandé)
+                </label>
+                <label>
+                    <input type="radio" name="audioEffects" value="1">
+                    Ne sait pas
+                </label>
+            </div>
+
+            <p class="question"><b>4.</b> Êtes-vous dans un environnement calme&nbsp;? </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="environment" value="0">
+                    Oui (Recommandé)
+                </label>
+                <label>
+                    <input type="radio" name="environment" value="1">
+                    Plus ou moins
+                </label>
+                <label>
+                    <input type="radio" name="environment" value="1">
+                    Non (Non recommandé)
+                </label>
+            </div>
+
+            <h3>Profil auditif</h3>
+
+            <p class="question"><b>5.</b> Quel âge avez-vous&nbsp;? </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="age" value="0">
+                    Moins de 18 ans
+                </label>
+                <label>
+                    <input type="radio" name="age" value="1">
+                    18-24 ans
+                </label>
+                <label>
+                    <input type="radio" name="age" value="2">
+                    25-34 ans
+                </label>
+                <label>
+                    <input type="radio" name="age" value="3">
+                    35-44 ans
+                </label>
+                <label>
+                    <input type="radio" name="age" value="4">
+                    45-54 ans
+                </label>
+                <label>
+                    <input type="radio" name="age" value="5">
+                    55-64 ans
+                </label>
+                <label>
+                    <input type="radio" name="age" value="6">
+                    65 ans et plus
+                </label>
+                <label>
+                    <input type="radio" name="age" value="7">
+                    Préfère ne pas répondre
+                </label>
+            </div>
+
+            <p class="question"><b>6.</b> Avez-vous des antécédents de troubles auditifs (perte auditive, acouphènes, hyperacousie, etc.)&nbsp;? </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="hearingIssues" value="0">
+                    Oui
+                </label>
+                <label>
+                    <input type="radio" name="hearingIssues" value="1">
+                    Non
+                </label>
+                <label>
+                    <input type="radio" name="hearingIssues" value="2">
+                    Préfère ne pas répondre
+                </label>
+            </div>
+
+            <h3>Profil musical</h3>
+
+            <p class="question"><b>7.</b> Pendant combien d'années avez-vous suivi une formation musicale (instrument, chant, ensemble, solphège, écriture, ...)&nbsp;? </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="musicalTraining" value="0">
+                    Aucune
+                </label>
+                <label>
+                    <input type="radio" name="musicalTraining" value="1">
+                    Moins de 1 an
+                </label>
+                <label>
+                    <input type="radio" name="musicalTraining" value="2">
+                    1-3 ans
+                </label>
+                <label>
+                    <input type="radio" name="musicalTraining" value="3">
+                    4-6 ans
+                </label>
+                <label>
+                    <input type="radio" name="musicalTraining" value="4">
+                    7-10 ans
+                </label>
+                <label>
+                    <input type="radio" name="musicalTraining" value="5">
+                    Plus de 10 ans
+                </label>
+            </div>
+
+            <p class="question"><b>8.</b> Comment évalueriez-vous votre oreille musicale (capacité à déterminer la hauteur d'une note ou la nature d'un intervale, d'un accord, ...) ? </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="musicalSkills" value="0">
+                    0 (Absolument pas développée)
+                </label>
+                <label>
+                    <input type="radio" name="musicalSkills" value="1">
+                    1  
+                </label>
+                <label>
+                    <input type="radio" name="musicalSkills" value="2">
+                    2
+                </label>
+                <label>
+                    <input type="radio" name="musicalSkills" value="3">
+                    3
+                </label>
+                <label>
+                    <input type="radio" name="musicalSkills" value="4">
+                    4
+                </label>
+                <label>
+                    <input type="radio" name="musicalSkills" value="5">
+                    5 (oreille absolue parfaite)
+                </label>
+            </div>
+
+            <p class="question"><b>9.</b> À quelle fréquence écoutez-vous de la musique (tous styles confondus)&nbsp;? </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="musicListening" value="0">
+                    Tous les jours
+                </label>
+                <label>
+                    <input type="radio" name="musicListening" value="1">
+                    Plusieurs fois par semaine
+                </label>
+                <label>
+                    <input type="radio" name="musicListening" value="2">
+                    Une fois par semaine
+                </label>
+                <label>
+                    <input type="radio" name="musicListening" value="3">
+                    Quelques fois par mois
+                </label>
+                <label>
+                    <input type="radio" name="musicListening" value="4">
+                    Rarement
+                </label>
+                <label>
+                    <input type="radio" name="musicListening" value="5">
+                    Jamais
+                </label>
+            </div>
+
+            <p class="question"><b>10.</b> Quel style musical écoutez-vous le plus&nbsp;? (TODO) </p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="musicStyles" value="0">
+                    Classique
+                </label>
+                <label>
+                    <input type="radio" name="musicStyles" value="1">
+                    Jazz
+                </label>
+                <label>
+                    <input type="radio" name="musicStyles" value="2">
+                    Rock
+                </label>
+                <label>
+                    <input type="radio" name="musicStyles" value="3">
+                    Pop
+                </label>
+                <label>
+                    <input type="radio" name="musicStyles" value="4">
+                    Hip-hop/Rap
+                </label>
+                <label>
+                    <input type="radio" name="musicStyles" value="5">
+                    Musiques électroniques
+                </label>
+                <label>
+                    <input type="radio" name="musicStyles" value="6">
+                    Musiques du monde
+                </label>
+                <label>
+                    <input type="radio" name="musicStyles" value="7">
+                    Autre
+                </label>
+            </div>
+            <br>
+            <button type="button" class="submit-btn" onclick="saveProfile()">Passer au sondage</button>
+        </form>
+    </div>
+</body>
+
+</html>
