@@ -35,20 +35,20 @@ function getProfile() {
  * @returns {{ sound1: [number, number], sound2: [number, number] }}
  */
 function generateFreqs() {
-    const baseFreq = randomNumber(MIN_BASE_FREQ, MAX_BASE_FREQ);
-
+    const baseFreq1 = randomNumber(MIN_BASE_FREQ, MAX_BASE_FREQ);
     const ratio1 = 2 ** randomNumber(MIN_INTERVAL, MAX_INTERVAL);
-    const freq1 = baseFreq * ratio1;
+    const freq1 = baseFreq1 * ratio1;
 
+    const baseFreq2 = randomNumber(MIN_BASE_FREQ, MAX_BASE_FREQ);
     const ratio2 = 2 ** randomNumber(MIN_INTERVAL, MAX_INTERVAL);
-    const freq2 = baseFreq * ratio2;
+    const freq2 = baseFreq2 * ratio2;
 
-    if (profile.stereo === 0 && (Math.abs(baseFreq - freq1) < MONO_THRESHOLD || Math.abs(baseFreq - freq2) < MONO_THRESHOLD))
+    if (profile.stereo === 0 && (Math.abs(baseFreq1 - freq1) < MONO_THRESHOLD || Math.abs(baseFreq2 - freq2) < MONO_THRESHOLD))
         return generateFreqs();
 
     return {
-        sound1: Math.random() < 0.5 ? [baseFreq, freq1] : [freq1, baseFreq],
-        sound2: Math.random() < 0.5 ? [baseFreq, freq2] : [freq2, baseFreq],
+        sound1: Math.random() < 0.5 ? [baseFreq1, freq1] : [freq1, baseFreq1],
+        sound2: Math.random() < 0.5 ? [baseFreq2, freq2] : [freq2, baseFreq2],
     };
 }
 

@@ -5,7 +5,7 @@ const { Sequelize } = require("sequelize");
  */
 const options = process.env.DATABASE_OPTIONS ? JSON.parse(process.env.DATABASE_OPTIONS) : {
     dialect: "sqlite",
-    storage: "databse.sqlite"
+    storage: "database.sqlite"
 };
 
 const sequelize = new Sequelize(options);
