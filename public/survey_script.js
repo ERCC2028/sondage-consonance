@@ -117,11 +117,8 @@ function sendSurveyResponse() {
         },
         body: JSON.stringify({
             ...freqs,
-            mostConsonant: mostConsonant,
-            profile: {
-                ...profile,
-                userAgent: navigator.userAgent
-            }
+            mostConsonant,
+            profile,
         })
     }).then(response => {
         if (!response.ok)

@@ -30,4 +30,5 @@ function checkProfile(profile) {
     return true;
 }
 
-module.exports = checkProfile;
+if (module)
+    module.exports = checkProfile;
