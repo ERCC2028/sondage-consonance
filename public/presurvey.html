@@ -21,17 +21,20 @@
         <h2>Pré-sondage</h2>
 
         <form id="form">
-            <p class="question">Écoutez le son 0 et réglez votre volume à un niveau confortable&nbsp;:</p>
+            <p class="question">Écoutez le son 0 et réglez le volume à un niveau confortable&nbsp;:</p>
             <div class="button-group">
-                <button type="button" id="play-calibration-sound" onclick="playCalibrationSound()">Jouer le son 0</button>
+                <button type="button" id="play-calibration-sound" onclick="playCalibrationSound()">Écouter le son
+                    0</button>
             </div>
 
-            <p class="question"><b>À chaque fois que vous changez de conditions d'écoute (système audio, environnement, etc.), réécoutez le son 0 et réctifiez si besoin vos réponses dans la section «&nbsp;Conditions d'écoute&nbsp;». </b></p>
+            <p class="question"><b>À chaque fois que vous changez de conditions d'écoute (système audio, environnement,
+                    etc.), réécoutez le son 0 et rectifiez si besoin vos réponses dans la section «&nbsp;Conditions
+                    d'écoute&nbsp;». </b></p>
 
             <h3>Conditions d'écoute</h3>
 
             <p class="question"><b>1.</b> En écoutant le son 0, avez-vous entendu des pulsations régulières
-                (volume qui monte et descend régulièrement environ une fois par seconde) ou un son stable (ton continu,
+                (volume qui monte et descend régulièrement environ une fois par seconde) ou un son stable (son continu,
                 sans variation nette de volume)&nbsp;? </p>
             <div class="radio-group">
                 <label>
@@ -44,7 +47,7 @@
                 </label>
             </div>
 
-            <p class="question"><b>2.</b> Utilisez-vous actuellement un casque ou des écouteurs&nbsp;? </p>
+            <p class="question"><b>2.</b> Utilisez-vous actuellement un casque/des écouteurs&nbsp;? </p>
             <div class="radio-group">
                 <label>
                     <input type="radio" name="headphones" value="0">
@@ -56,8 +59,9 @@
                 </label>
             </div>
 
-            <p class="question"><b>3.</b> Des effets audio sont-ils activés (EQ, spatial/audio enhancements,
-                noise-cancelling transparency, Dolby Atmos, etc.)&nbsp;? </p>
+            <p class="question"><b>3.</b> Des effets audio sont-ils activés (égalisation (EQ), effets
+                spatiaux, améliorations audio, réduction de bruit active, mode transparence, Dolby Atmos, etc.)&nbsp;?
+            </p>
             <div class="radio-group">
                 <label>
                     <input type="radio" name="audioEffects" value="0">
@@ -69,7 +73,7 @@
                 </label>
                 <label>
                     <input type="radio" name="audioEffects" value="1">
-                    Ne sait pas
+                    Je ne sais pas
                 </label>
             </div>
 
@@ -81,10 +85,10 @@
                 </label>
                 <label>
                     <input type="radio" name="environment" value="1">
-                    Plus ou moins
+                    Relativement calme
                 </label>
                 <label>
-                    <input type="radio" name="environment" value="1">
+                    <input type="radio" name="environment" value="2">
                     Non (Non recommandé)
                 </label>
             </div>
@@ -127,7 +131,8 @@
                 </label>
             </div>
 
-            <p class="question"><b>6.</b> Avez-vous des antécédents de troubles auditifs (perte auditive, acouphènes, hyperacousie, etc.)&nbsp;? </p>
+            <p class="question"><b>6.</b> Avez-vous des antécédents de troubles auditifs (perte auditive, acouphènes,
+                hyperacousie, etc.)&nbsp;? </p>
             <div class="radio-group">
                 <label>
                     <input type="radio" name="hearingIssues" value="0">
@@ -145,7 +150,8 @@
 
             <h3>Profil musical</h3>
 
-            <p class="question"><b>7.</b> Pendant combien d'années avez-vous suivi une formation musicale (instrument, chant, ensemble, solphège, écriture, ...)&nbsp;? </p>
+            <p class="question"><b>7.</b> Pendant combien d'années avez-vous suivi une formation musicale (instrument,
+                chant, ensemble, solfège, écriture, etc.)&nbsp;? </p>
             <div class="radio-group">
                 <label>
                     <input type="radio" name="musicalTraining" value="0">
@@ -173,15 +179,16 @@
                 </label>
             </div>
 
-            <p class="question"><b>8.</b> Comment évalueriez-vous votre oreille musicale (capacité à déterminer la hauteur d'une note ou la nature d'un intervale, d'un accord, ...) ? </p>
+            <p class="question"><b>8.</b> Comment évalueriez-vous votre oreille musicale (capacité à déterminer la
+                hauteur d'une note ou la nature d'un intervalle, d'un accord, etc.)&nbsp;? </p>
             <div class="radio-group">
                 <label>
                     <input type="radio" name="musicalSkills" value="0">
-                    0 (Absolument pas développée)
+                    0 (Si vous n'avez jamais pratiqué la musique)
                 </label>
                 <label>
                     <input type="radio" name="musicalSkills" value="1">
-                    1  
+                    1
                 </label>
                 <label>
                     <input type="radio" name="musicalSkills" value="2">
@@ -197,11 +204,13 @@
                 </label>
                 <label>
                     <input type="radio" name="musicalSkills" value="5">
-                    5 (oreille absolue parfaite)
+                    5 (oreille absolue parfaite, capable de reconnaître n'importe quelle note, intervalle, accord,
+                    succession d'accords sans référence)
                 </label>
             </div>
 
-            <p class="question"><b>9.</b> À quelle fréquence écoutez-vous de la musique (tous styles confondus)&nbsp;? </p>
+            <p class="question"><b>9.</b> À quelle fréquence écoutez-vous de la musique (tous styles confondus)&nbsp;?
+            </p>
             <div class="radio-group">
                 <label>
                     <input type="radio" name="musicListening" value="0">
@@ -229,7 +238,7 @@
                 </label>
             </div>
 
-            <p class="question"><b>10.</b> Quel style musical écoutez-vous le plus&nbsp;? (TODO) </p>
+            <p class="question"><b>10.</b> Quel style musical écoutez-vous le plus&nbsp;?</p>
             <div class="radio-group">
                 <label>
                     <input type="radio" name="musicStyles" value="0">

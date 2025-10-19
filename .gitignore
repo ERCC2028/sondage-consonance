@@ -7,3 +7,5 @@ node_modules/
 .AppleDouble
 .LSOverride
 database.sqlite
+a.js
+rating_space.csv
