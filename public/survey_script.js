@@ -1,6 +1,8 @@
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const profile = getProfile();
 const freqs = generateFreqs();
+const MIN_NOTE = Math.log2(MIN_FREQ);
+const MAX_NOTE = Math.log2(MAX_FREQ);
 
 /**
  * 
@@ -55,7 +57,7 @@ function generateFreqs() {
  * @returns {number}
  */
 function randomFreq() {
-    return noteToFreq(Math.random() * (MAX_NOTE - MIN_NOTE) + MIN_NOTE);
+    return 2 ** (Math.random() * (MAX_NOTE - MIN_NOTE) + MIN_NOTE);
 }
 
 var playing = false;
