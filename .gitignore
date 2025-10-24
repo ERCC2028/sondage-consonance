@@ -3,9 +3,10 @@ Thumbs.db
 desktop.ini
 node_modules/
 .env
+.env*
 .vscode/
 .AppleDouble
 .LSOverride
 database.sqlite
 a.js
-rating_space.csv
+*.csv

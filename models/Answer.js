@@ -2,19 +2,19 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../sequelize");
 
 const Answer = sequelize.define("Answer", {
-    sound1Left: {
+    left1: {
         type: DataTypes.FLOAT,
         allowNull: false,
     },
-    sound1Right: {
+    right1: {
         type: DataTypes.FLOAT,
         allowNull: false,
     },
-    sound2Left: {
+    left2: {
         type: DataTypes.FLOAT,
         allowNull: false,
     },
-    sound2Right: {
+    right2: {
         type: DataTypes.FLOAT,
         allowNull: false,
     },

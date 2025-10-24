@@ -18,7 +18,6 @@ function onLoad() {
 function saveProfile() {
     const form = document.getElementById("form");
     const formData = new FormData(form);
-    console.log(Object.fromEntries(formData.entries()));
     const profile = {};
     let answerCounter = 0;
 

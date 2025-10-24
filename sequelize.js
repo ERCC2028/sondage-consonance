@@ -1,5 +1,5 @@
 const { Sequelize } = require("sequelize");
-//process.env.DATABASE_URL ? JSON.parse(process.env.DATABASE_URL) : 
+
 /**
  * @type {import("sequelize").Options}
  */
