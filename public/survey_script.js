@@ -97,7 +97,13 @@ function playSound(id) {
     setTimeout(() => playing = false, DURATION * 1000);
 }
 
+var clicked = false;
+
 function sendSurveyResponse() {
+    if (clicked)
+        return;
+    clicked = true;
+
     const selected = document.querySelector('input[name="consonant"]:checked');
 
     if (!selected) {
@@ -124,5 +130,5 @@ function sendSurveyResponse() {
     }).catch(error => {
         console.error("Error:", error);
         alert("Une erreur est survenue lors de l'envoi des données. Veuillez réessayer.");
-    });
+    }).finally(() => clicked = false);
 }
