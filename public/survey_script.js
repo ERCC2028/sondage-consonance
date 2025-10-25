@@ -1,8 +1,8 @@
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-const profile = getProfile();
-const freqs = generateFreqs();
 const MIN_NOTE = Math.log2(MIN_FREQ);
 const MAX_NOTE = Math.log2(MAX_FREQ);
+const profile = getProfile();
+const freqs = generateFreqs();
 
 /**
  * 
