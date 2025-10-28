@@ -21,6 +21,8 @@
 
         <h2>Sondage</h2>
 
+        <p id="counter" class="question" style="color: #888;">Réponses envoyées : </p>
+
         <p class="question">Écoutez ces deux sons :</p>
         <div class="button-group">
             <button id="playSound1" onclick="playSound(1)">Écouter le son 1</button>
@@ -47,6 +49,10 @@
             <button type="button" class="submit-btn" onclick="sendSurveyResponse()">Sons suivants</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById("counter").innerHTML += getCounter();
+    </script>
 </body>
 
 </html>

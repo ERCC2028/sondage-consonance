@@ -27,6 +27,14 @@ function getProfile() {
     return profile;
 }
 
+function getCounter() {
+    return Number(localStorage.getItem("counter")) || 0;
+}
+
+function incrementCounter() {
+    localStorage.setItem("counter", String(getCounter() + 1));
+}
+
 /**
  * @returns {{ left1: number, right1: number, left2: number, right2: number }}
  */
@@ -127,6 +135,8 @@ function sendSurveyResponse() {
         if (!response.ok)
             throw response.json();
         window.location.reload();
+        incrementCounter();
+        alert("Réponse envoyée avec succès. Une nouvelle comparaison de sons vous sera maintenant présentée. Vous pouvez choisir d'y répondre ou d'arrêter votre participation ici.");
     }).catch(error => {
         console.error("Error:", error);
         alert("Une erreur est survenue lors de l'envoi des données. Veuillez réessayer.");
