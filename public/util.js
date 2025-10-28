@@ -12,7 +12,7 @@ const profileStructure = {
 };
 
 const MIN_FREQ = 200;
-const MAX_FREQ = 1000;
+const MAX_FREQ = 800;
 const DURATION = 2;
 const MONO_THRESHOLD = 25;
 
