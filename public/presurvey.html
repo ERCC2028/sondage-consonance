@@ -23,8 +23,12 @@
         <form id="form">
             <p class="question">Écoutez le son 0 et réglez le volume à un niveau confortable&nbsp;:</p>
             <div class="button-group">
-                <button type="button" id="play-calibration-sound" onclick="playCalibrationSound()">Écouter le son
-                    0</button>
+                <button type="button" id="play-calibration-sound" onclick="playCalibrationSound()">Écouter le son 0</button>
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="play-calibration-sound" onclick="playStableSound()">Écouter un son stable</button>
+                <button type="button" id="play-calibration-sound" onclick="playRegularPulses()">Écouter des pulsations régulières</button>
             </div>
 
             <p class="question"><b>À chaque fois que vous changez de conditions d'écoute (système audio, environnement,
@@ -33,9 +37,7 @@
 
             <h3>Conditions d'écoute</h3>
 
-            <p class="question"><b>1.</b> En écoutant le son 0, avez-vous entendu des pulsations régulières
-                (volume qui monte et descend régulièrement environ une fois par seconde) ou un son stable (son continu,
-                sans variation nette de volume)&nbsp;? </p>
+            <p class="question"><b>1.</b> Comparez le son 0 au son stable et aux pulsations régulières, de quel autre son le son 0 est-il le plus proche&nbsp;?</p>
             <div class="radio-group">
                 <label>
                     <input type="radio" name="stereo" value="0">
@@ -44,6 +46,10 @@
                 <label>
                     <input type="radio" name="stereo" value="1">
                     Son stable
+                </label>
+                <label>
+                    <input type="radio" name="stereo" value="2">
+                    Ne sait pas / Entre les deux
                 </label>
             </div>
 

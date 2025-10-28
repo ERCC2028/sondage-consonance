@@ -1,6 +1,5 @@
-//
 const profileStructure = {
-    stereo: 2,
+    stereo: 3,
     headphones: 2,
     audioEffects: 3,
     environment: 3,

@@ -2,7 +2,7 @@ const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const MIN_NOTE = Math.log2(MIN_FREQ);
 const MAX_NOTE = Math.log2(MAX_FREQ);
 const profile = getProfile();
-const freqs = generateFreqs();
+const freqs = generateFreqsLight();
 
 /**
  * 
@@ -23,7 +23,7 @@ function getProfile() {
         alert("Veuillez remplir le pré-sondage d'abord.");
         return window.location.href = "/presurvey";
     }
-    
+
     return profile;
 }
 
@@ -45,9 +45,9 @@ function generateFreqs() {
     const right2 = randomFreq();
 
     if (
-        profile.stereo === 0 && 
-        (Math.abs(left1 - right1) < MONO_THRESHOLD || 
-        Math.abs(left2 - right2) < MONO_THRESHOLD)
+        profile.stereo === 0 &&
+        (Math.abs(left1 - right1) < MONO_THRESHOLD ||
+            Math.abs(left2 - right2) < MONO_THRESHOLD)
     )
         return generateFreqs();
 
@@ -56,6 +56,29 @@ function generateFreqs() {
         right1,
         left2,
         right2
+    };
+}
+
+function generateFreqsLight() {
+    const low = randomFreq();
+    const high1 = low * randomRatio();
+    const high2 = low * randomRatio();
+
+    if (
+        profile.stereo === 0 &&
+        (Math.abs(low - high1) < MONO_THRESHOLD ||
+            Math.abs(low - high2) < MONO_THRESHOLD)
+    )
+        return generateFreqsLight();
+
+    const r1 = Math.random() < .5;
+    const r2 = Math.random() < .5;
+    
+    return {
+        left1: r1 ? low : high1,
+        right1: r1 ? high1 : low,
+        left2: r2 ? low : high2,
+        right2: r2 ? high2 : low,
     };
 }
 
@@ -68,6 +91,11 @@ function randomFreq() {
     return 2 ** (Math.random() * (MAX_NOTE - MIN_NOTE) + MIN_NOTE);
 }
 
+
+function randomRatio() {
+    return 2 ** Math.random();
+}
+
 var playing = false;
 
 /**
@@ -78,6 +106,7 @@ var playing = false;
 function playSound(id) {
     if (playing)
         return;
+    playing = true;
 
     const leftOsc = audioCtx.createOscillator();
     const rightOsc = audioCtx.createOscillator();
@@ -101,7 +130,6 @@ function playSound(id) {
     leftOsc.stop(audioCtx.currentTime + DURATION);
     rightOsc.stop(audioCtx.currentTime + DURATION);
 
-    playing = true;
     setTimeout(() => playing = false, DURATION * 1000);
 }
 

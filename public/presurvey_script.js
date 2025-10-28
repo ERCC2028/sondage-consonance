@@ -41,6 +41,7 @@ var playing = false;
 function playCalibrationSound() {
     if (playing)
         return;
+    playing = true;
 
     const leftOsc = audioCtx.createOscillator();
     const rightOsc = audioCtx.createOscillator();
@@ -63,6 +64,48 @@ function playCalibrationSound() {
     leftOsc.stop(audioCtx.currentTime + CALIBRATION_DURATION);
     rightOsc.stop(audioCtx.currentTime + CALIBRATION_DURATION);
 
+    setTimeout(() => { playing = false; }, CALIBRATION_DURATION * 1000);
+}
+
+function playStableSound() {
+    if (playing)
+        return;
     playing = true;
-    setTimeout(() => { playing = false; }, 2.5 * 1000);
+
+    const osc = audioCtx.createOscillator();
+
+    osc.type = "sine";
+    osc.frequency.value = 440;
+
+    osc.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + CALIBRATION_DURATION);
+
+    setTimeout(() => { playing = false; }, CALIBRATION_DURATION * 1000);
+}
+
+function playRegularPulses() {
+    if (playing)
+        return;
+    playing = true;
+    const leftOsc = audioCtx.createOscillator();
+    const rightOsc = audioCtx.createOscillator();
+
+    leftOsc.type = rightOsc.type = "sine";
+    leftOsc.frequency.value = 440;
+    rightOsc.frequency.value = 441;
+
+    const gainNode = audioCtx.createGain();
+    gainNode.gain.value = 0.5;
+
+    leftOsc.connect(gainNode).connect(audioCtx.destination);
+    rightOsc.connect(gainNode).connect(audioCtx.destination);
+
+    leftOsc.start();
+    rightOsc.start();
+
+    leftOsc.stop(audioCtx.currentTime + CALIBRATION_DURATION);
+    rightOsc.stop(audioCtx.currentTime + CALIBRATION_DURATION);
+
+    setTimeout(() => { playing = false; }, CALIBRATION_DURATION * 1000);
 }
