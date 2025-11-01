@@ -71,8 +71,8 @@ function generateFreqsLight() {
     )
         return generateFreqsLight();
 
-    const r1 = Math.random() < .5;
-    const r2 = Math.random() < .5;
+    const r1 = Math.random() < 0.5;
+    const r2 = Math.random() < 0.5;
     
     return {
         left1: r1 ? low : high1,
